@@ -1,0 +1,1165 @@
+html 
+{
+    overflow-x: hidden; 
+}
+
+body
+{
+    overflow-x: hidden;
+    background: rgb(58,58,58);
+    color: white;
+    font-family: Helvetica Neue, Arial, Helvetica, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    min-width: 500px;
+}
+
+/*HEADER ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||*/
+
+.toggler
+{
+    display: none;
+}
+
+header
+{
+    background: black;
+    height: 100px;
+    padding: 10px;
+    text-align: center;
+    margin: 0px;
+}
+
+header a
+{
+    z-index: 1;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+nav .current-page
+{
+    cursor: pointer;
+}
+
+nav .logo
+{
+    display: inline-block;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+}
+
+.logo a
+{
+    z-index: 99;
+    display: block;
+    height: 100px;
+    width: 100px;
+    position: relative;
+    cursor: pointer;
+}
+
+nav .logo a img
+{
+    text-indent: -999999px;
+    height: 100px;
+    position: relative;
+}
+
+nav .nav-link
+{
+    position: relative;
+    top: -42px;
+}
+
+nav .nav-link a
+{
+    z-index: 99;
+    cursor: pointer;
+    padding: 10px;
+    margin: 0px 10px;
+    position: relative;
+    top: 0;
+    font-size: 20px;
+}
+
+nav .nav-link .current-page
+{
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+}
+
+nav .nav-link a::before
+{    
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    width: 0%;
+    height: 0%;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    opacity: 0;
+    transition: .5s;
+}
+nav .nav-link a:hover::before
+{
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+nav .nav-link .current-page::before
+{
+    content: "";
+    border-top: none;
+    border-left: none;
+}
+nav .nav-link a::after
+{    
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    right: -1px;
+    width: 0%;
+    height: 0%;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    opacity: 0;
+    transition: .5s;
+}
+nav .nav-link a:hover::after
+{
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+nav .nav-link .current-page::after
+{
+    content: "";
+    border-bottom: none;
+    border-right: none;
+}
+
+nav ul
+{
+    margin: 0px;
+    padding: 0px;
+}
+nav li
+{
+    display: inline-block;
+}
+
+nav .logo:hover ~ .title
+{
+    top: 120px;
+    opacity: 1;
+}
+
+nav .title
+{
+    display: block;
+    position: absolute;
+    width: 200px;
+    text-align: center;
+    background-color: black;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    z-index: 1;
+    margin: 0;
+    padding: 10px 20px;
+    top: 40px;
+    opacity: 0;
+    transition: 0.2s ease-out;
+    left: calc(50% - 480px);
+}
+
+.title h1
+{
+    margin: 0px;
+    padding: 0px;
+}
+
+/*Responsive rules |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||*/
+
+@media screen and (max-width: 1080px)
+{
+    header
+    {
+        padding: 0px;
+        height: 120px;;
+    }
+
+    header nav
+    {
+        height: 120px;
+    }
+
+    .toggler 
+    {
+        display: block;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        z-index: 2;
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        opacity: 0;
+        margin: 40px 20px;
+    }
+
+    .hamburger 
+    {
+        display: block;
+        position: absolute;
+        top: 0;
+        right:0;
+        z-index: 1;
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        margin: 40px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .hamburger > div
+    {
+        position: relative;
+        width: 100%;
+        height: 3px;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.4s ease;
+    }
+
+    .hamburger > div::before,
+    .hamburger > div::after
+    {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        top: -15px;
+        width: 100%;
+        height: 3px;
+        background: inherit;
+    }
+    .hamburger > div::after
+    {
+        top: 15px;
+    }
+    .toggler:checked + .hamburger > div
+    {
+        transform: rotate(135deg);
+    }
+    .toggler:checked + .hamburger > div::before,
+    .toggler:checked + .hamburger > div::after
+    {
+        top: 0px;
+        transform: rotate(90deg);
+    }
+    .toggler:checked:hover + .hamburger > div
+    {
+        transform: rotate(225deg);
+    }
+
+    .menu
+    {
+        height: 120px;;
+    }
+    nav .logo
+    {
+        position: absolute;
+        width: 120px;
+        top: 10px;
+        left: 16px;
+    }
+    header ul
+    {
+        padding: 0px;
+        margin: 0px;
+    }
+    header li
+    {
+        width: 100%;
+    }
+    nav .nav-link a
+    {
+        position: relative;
+        transition: all 0.4s ease;
+        margin: 0px;
+        top: 162px;
+        left: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(10,10,10);
+        z-index: 1;
+        border-top: 1px dashed rgba(40,40,40,0.4);
+    }
+    .toggler:checked ~ .menu > ul > .nav-link a
+    {
+        left: 0%;
+    }
+
+    nav .logo:hover ~ .title
+    {
+        opacity: 1;
+        position: relative;
+        top: -205px;
+        background-color: transparent;
+        left: 100px;
+        font-size: 20px;
+        transition: none;
+    }
+
+    nav .title
+    {
+        opacity: 1;
+        position: relative;
+        top: -205px;
+        background-color: transparent;
+        left: 100px;
+        font-size: 20px;
+        transition: none;
+    }
+}
+
+@media screen and (max-width: 500px)
+{
+    header
+    {
+        padding: 0px;
+        height: 120px;;
+    }
+
+    header nav
+    {
+        height: 120px;
+    }
+
+    .toggler 
+    {
+        display: block;
+        position: absolute;
+        top: 0px;
+        left: 420px;
+        z-index: 2;
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        opacity: 0;
+        margin: 40px 20px;
+    }
+
+    .hamburger 
+    {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 420px;
+        z-index: 1;
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        margin: 40px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .hamburger > div
+    {
+        position: relative;
+        width: 100%;
+        height: 3px;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.4s ease;
+    }
+
+    .hamburger > div::before,
+    .hamburger > div::after
+    {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        top: -15px;
+        width: 100%;
+        height: 3px;
+        background: inherit;
+    }
+    .hamburger > div::after
+    {
+        top: 15px;
+    }
+    .toggler:checked + .hamburger > div
+    {
+        transform: rotate(135deg);
+    }
+    .toggler:checked + .hamburger > div::before,
+    .toggler:checked + .hamburger > div::after
+    {
+        top: 0px;
+        transform: rotate(90deg);
+    }
+    .toggler:checked:hover + .hamburger > div
+    {
+        transform: rotate(225deg);
+    }
+
+    .menu
+    {
+        height: 120px;;
+    }
+    nav .logo
+    {
+        position: absolute;
+        width: 120px;
+        top: 10px;
+        left: 16px;
+    }
+    header ul
+    {
+        padding: 0px;
+        margin: 0px;
+    }
+    header li
+    {
+        width: 100%;
+    }
+    nav .nav-link a
+    {
+        position: relative;
+        transition: all 0.4s ease;
+        margin: 0px;
+        top: 162px;
+        left: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(10,10,10);
+        z-index: 1;
+        border-top: 1px dashed rgba(40,40,40,0.4);
+    }
+    .toggler:checked ~ .menu > ul > .nav-link a
+    {
+        left: 0%;
+    }
+
+    nav .logo:hover ~ .title
+    {
+        opacity: 1;
+        position: relative;
+        top: -205px;
+        background-color: transparent;
+        left: 100px;
+        font-size: 20px;
+        transition: none;
+    }
+
+    nav .title
+    {
+        opacity: 1;
+        position: relative;
+        top: -205px;
+        background-color: transparent;
+        left: 100px;
+        font-size: 20px;
+        transition: none;
+    }
+}
+
+/*Responsive rules ||||||||||||||||||||||||||||||||||||||||||||||||||||||||*/
+
+/*HEADER ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||*/
+
+/*SECTIONS ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||*/
+
+section
+{
+    background: rgb(30,30,30);
+    display: inline-block;
+    left: 10%;
+    position: relative;
+    width: 80%;
+    margin: 0px;
+}
+
+.main-section
+{
+    background-image: url("images/MainPage_Main.jpg");
+    display: block;
+    height: 350px;
+    position: relative;
+    background-size: 100%;
+    background-position: center;
+}
+
+.main-section::before
+{
+    content: "";
+    display: absolute;
+    left: 35%;
+}
+
+.second-section
+{
+    height: 400px;
+    margin: 15px 0 0 0;
+}
+
+.second-section div
+{
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+.welkom
+{
+    text-align: justify;
+    text-justify: inter-word;
+    width: 261px;
+}
+
+.welkom::after
+{
+    border-right: 1px solid;
+    bottom: 5%;
+    content: "";
+    display: inline-block;
+    height: 90%;
+    left: 261px;
+    position: absolute;
+}
+
+.welkom h3
+{
+    padding-left: 20px;
+    text-decoration: none;
+}
+
+.welkom p
+{
+    background-color: rgb(70,70,70);
+    border-radius: 5px;
+    font-size: 11px;
+    padding: 15px;
+    text-transform: none;
+    margin: 15px;
+}
+
+.over
+{
+    float: right;
+    text-align: right;
+    width: calc(100% - 270px);
+    height: 100%;
+}
+
+.over h3
+{
+    z-index: 1;
+    position: absolute;
+    margin: 0px;
+    padding: 20px 30px 10px 30px;
+    right: 20px;
+    width: 210px;
+    text-decoration: none;
+}
+
+.over div
+{
+    position: relative;
+    height: 90%;
+}
+
+.over .slide-container
+{
+    white-space: nowrap;
+    width: 92%;
+    top: 15%;
+    left: -4%;
+    display: inline-block;
+    overflow: hidden;
+    margin-left: 3%;
+}
+
+.slide-container .gallery div
+{
+    height: 100%;
+    left: calc(calc(-1296px + 100%) / 2);
+}
+
+.slide-container div
+{
+    transition: 0.8s ease-in-out;
+    left: calc(calc(-1296px + 100%) / 2);
+}
+
+.slide-container div img
+{
+    border-radius: 5px;
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    width: auto;
+    top: 0px;
+}
+
+#i0, #i1, #i2, #i3, #i4
+{
+    display: none;
+}
+
+.pre, .nxt
+{
+    transition: 0.3s ease-in-out;
+    width: 12%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background: rgba(0,0,0,0.35);
+    z-index: 99;
+    cursor: pointer;
+    opacity: 0;
+    overflow: hidden;
+}
+
+.pre
+{
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    left: 0;
+}
+
+.nxt
+{
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    right: 0;
+}
+
+.slide-container .nav
+{
+    width: 100%;
+    height: 11px;
+    bottom: 12%;
+    position: absolute;
+    text-align: center;
+    z-index: 99;
+    left: 0;
+}
+
+.dots
+{
+    top:-5px;
+    width: 18px;;
+    height: 18px;
+    margin: 0 4px;
+    position: relative;
+    border-radius: 50%;
+    display: inline-block;
+    background: rgba(0,0,0,0.4);
+}
+
+#i0:checked ~ #Garage-Close-Up,
+#i0:checked ~ #Garage-Volledig,
+#i0:checked ~ #Garage-Remtestbank,
+#i0:checked ~ #Garage-Bruggen,
+#i0:checked ~ #Garage-Banden-Kamer
+{
+    left: calc(calc(calc(-1296px + 100%) / 2) + 432px);
+}
+#i1:checked ~ #Garage-Close-Up,
+#i1:checked ~ #Garage-Volledig,
+#i1:checked ~ #Garage-Remtestbank,
+#i1:checked ~ #Garage-Bruggen,
+#i1:checked ~ #Garage-Banden-Kamer
+{
+    left: calc(calc(-1296px + 100%) / 2);
+}
+#i2:checked ~ #Garage-Close-Up,
+#i2:checked ~ #Garage-Volledig,
+#i2:checked ~ #Garage-Remtestbank,
+#i2:checked ~ #Garage-Bruggen,
+#i2:checked ~ #Garage-Banden-Kamer
+{
+    left: calc(calc(calc(-1296px + 100%) / 2) - 432px);
+}
+#i3:checked ~ #Garage-Close-Up,
+#i3:checked ~ #Garage-Volledig,
+#i3:checked ~ #Garage-Remtestbank,
+#i3:checked ~ #Garage-Bruggen,
+#i3:checked ~ #Garage-Banden-Kamer
+{
+    left: calc(calc(calc(-1296px + 100%) / 2) - 864px);
+}
+#i4:checked ~ #Garage-Close-Up,
+#i4:checked ~ #Garage-Volledig,
+#i4:checked ~ #Garage-Remtestbank,
+#i4:checked ~ #Garage-Bruggen,
+#i4:checked ~ #Garage-Banden-Kamer
+{
+    left: calc(calc(calc(-1296px + 100%) / 2) - 1296px);
+}
+
+#i0:checked ~ #Garage-Close-Up,
+#i0:checked ~ #Garage-Close-Up > .nxt
+{
+    opacity: 1;
+}
+#i1:checked ~ #Garage-Volledig,
+#i1:checked ~ #Garage-Volledig > .pre,
+#i1:checked ~ #Garage-Volledig > .nxt
+{
+    opacity: 1;
+}
+#i2:checked ~ #Garage-Remtestbank,
+#i2:checked ~ #Garage-Remtestbank > .pre,
+#i2:checked ~ #Garage-Remtestbank > .nxt
+{
+    opacity: 1;
+}
+#i3:checked ~ #Garage-Bruggen,
+#i3:checked ~ #Garage-Bruggen > .pre,
+#i3:checked ~ #Garage-Bruggen > .nxt
+{
+    opacity: 1;
+}
+#i4:checked ~ #Garage-Banden-Kamer,
+#i4:checked ~ #Garage-Banden-Kamer > .pre
+{
+    opacity: 1;
+}
+
+#i0:checked ~ .nav #d0
+{
+    background-color: white;
+}
+#i1:checked ~ .nav #d1
+{
+    background-color: white;
+}
+#i2:checked ~ .nav #d2
+{
+    background-color: white;
+}
+#i3:checked ~ .nav #d3
+{
+    background-color: white;
+}
+#i4:checked ~ .nav #d4
+{
+    background-color: white;
+}
+
+.date-section
+{
+    position: relative;
+    margin: 0 50%;
+    transform: translateX(-50%);
+    left: 0;
+    width: auto;
+    display: inline-block;
+    background-color: rgb(30,30,30);
+    height: 440px;
+    text-align: center;
+    justify-content: center;
+}
+
+.date-section .opening-info
+{
+    position: relative;
+    display: inline-block;
+    height: 90%;
+    top: 5%;
+    border-radius: 10px;
+    border: 1px solid white;
+    overflow: hidden;
+    margin: 0px 30px;
+}
+
+.date-section .opening-info img
+{
+    position: relative;
+    height: 100%;
+    width: auto;
+}
+.date-section .opening-info .open-mobile
+{
+    display: none;
+}
+
+.map-section
+{
+    left: 0;
+    position: relative;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    text-align: center;
+    justify-content: center;
+    white-space: nowrap;
+}
+
+.map-section div
+{
+    position: relative;
+    display: inline-block;
+    margin: 0px 60px 0px 50px; 
+    padding-bottom: 0px;
+    width: auto;
+}
+
+.map-section div h3
+{
+    margin-bottom: 10px;
+}
+
+.map-section div ul
+{
+    margin-top: 5px;
+}
+
+.map-section div ul li
+{
+    width: 140px;
+}
+
+.map 
+{
+    position: relative;
+    display: inline-block;
+    margin: 20px 0px 20px 30px;
+    vertical-align: middle;
+
+}
+.map-medium
+{
+    position: relative;
+    display: none;
+}
+.map-mobile
+{
+    position: relative;
+    display: none;
+}
+
+.contact-section
+{
+    width: 1080px;
+    left: 50%;
+    transform: translateX(-50%);
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.contact-section div
+{
+    margin: 0px 50px 20px 50px;
+    display: block;
+}
+
+.contact-section div div
+{
+    margin: 0;
+    display: inline-block;
+}
+
+.contact-section #telefoon
+{
+    margin: 0px 140px 0px 0px;
+}
+
+.contact-section #naam
+{
+    display: block;
+}
+
+.contact-section #naam h2
+{
+    margin-bottom: 0;
+}
+
+.contact-section #naam p
+{
+    margin: 0px;
+}
+
+.contact-section div h3
+{
+    margin-left: 10px;
+}
+
+.contact-section div ul
+{
+    padding-left: 20px;
+}
+
+/*Responsive rules |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||*/
+
+@media screen and (max-width: 960px)
+{
+    .date-section
+    {
+        margin: 0;
+        transform: translateX(0);
+        width: 100%;
+        height: auto;
+    }
+
+    .date-section .opening-info
+    {
+        margin: 10px;
+    }
+
+    .date-section .opening-info img
+    {
+        display: none;
+    }
+    .date-section .opening-info .open-mobile
+    {
+        height: 100%;
+        width: 100%;
+        display: inline-block;
+    }
+}
+
+@media screen and (max-width: 1080px)
+{
+    section
+    {
+        width: 100%;
+        left: 0px;
+    }
+    .main-section
+    {
+        height: 200px;
+    }
+    .second-section
+    {
+        height: auto;
+    }
+    .second-section div
+    {
+        width: 100%;
+        display: inline-block;
+        position: relative;
+        margin: 0px;
+        padding: 0px;
+    }
+    .second-section .welkom
+    {
+        height: 150px;
+        margin: 0px;
+        padding: 0px;
+    }
+    .welkom::after
+    {
+        border-right: none;
+    }
+    .second-section .over
+    {
+        height: auto;
+    }
+    .over h3
+    {
+        display: inline-block;
+        position: relative;
+        right: 0%;
+        top: 0;
+        margin: 10px 0px;
+    }
+    .over .slide-container
+    {
+        display: inline-block;
+        position: relative;
+        right: 0%;
+        width: 90%;
+        height: 100%;
+        top: 0px;
+        margin: 0px 0px 5px 0px;
+    }
+
+    .over .pre
+    {
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+    }
+
+    .over .nxt
+    {
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+    }
+
+    #Garage-Banden-Kamer img,
+    #Garage-Bruggen img,
+    #Garage-Remtestbank img,
+    #Garage-Volledig img,
+    #Garage-Close-Up img
+    {
+        position: relative;
+        height:auto !important;
+        width: 100%;
+        float: left;
+        border-radius: 15px;
+    }
+
+    #i0:checked ~ #Garage-Close-Up,
+    #i0:checked ~ #Garage-Volledig,
+    #i0:checked ~ #Garage-Remtestbank,
+    #i0:checked ~ #Garage-Bruggen,
+    #i0:checked ~ #Garage-Banden-Kamer
+    {
+        left: 0;
+    }
+    #i1:checked ~ #Garage-Close-Up,
+    #i1:checked ~ #Garage-Volledig,
+    #i1:checked ~ #Garage-Remtestbank,
+    #i1:checked ~ #Garage-Bruggen,
+    #i1:checked ~ #Garage-Banden-Kamer
+    {
+        left: calc(-100% - 1.2mm);
+    }
+    #i2:checked ~ #Garage-Close-Up,
+    #i2:checked ~ #Garage-Volledig,
+    #i2:checked ~ #Garage-Remtestbank,
+    #i2:checked ~ #Garage-Bruggen,
+    #i2:checked ~ #Garage-Banden-Kamer
+    {
+        left: calc(-200% - 2.4mm);
+    }
+    #i3:checked ~ #Garage-Close-Up,
+    #i3:checked ~ #Garage-Volledig,
+    #i3:checked ~ #Garage-Remtestbank,
+    #i3:checked ~ #Garage-Bruggen,
+    #i3:checked ~ #Garage-Banden-Kamer
+    {
+        left: calc(-300% - 3.6mm);
+    }
+    #i4:checked ~ #Garage-Close-Up,
+    #i4:checked ~ #Garage-Volledig,
+    #i4:checked ~ #Garage-Remtestbank,
+    #i4:checked ~ #Garage-Bruggen,
+    #i4:checked ~ #Garage-Banden-Kamer
+    {
+        left: calc(-400% - 4.8mm);
+    }
+}
+
+@media screen and (max-width: 1100px)
+{
+    .map 
+    {
+        display: none;
+    }
+    .map-medium
+    {
+        margin: 20px 0px 20px 30px;
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+    }
+}
+
+@media screen and (max-width: 900px)
+{
+    .map-section
+    {
+        left: 0;
+        margin-left: 0%;
+        transform: translateX(0%);
+        width: 100%;
+    }
+
+    .map 
+    {
+        display: none;
+    }
+    .map-medium
+    {
+        display: none;
+    }
+    .map-mobile
+    {
+        margin: 20px 0px 20px 30px;
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+    }
+}
+
+@media screen and (max-width: 700px)
+{
+    .map-section
+    {
+        left: 0;
+        margin-left: 0%;
+        transform: translateX(0%);
+        width: 100%;
+    }
+
+    .map-section div
+    {
+        margin: 0 auto 20px; 
+    }
+    
+    .map 
+    {
+        display: none;
+    }
+    .map-medium
+    {
+        display: none;
+    }
+    .map-mobile
+    {
+        margin: 20px auto;
+        position: relative;
+        display: block;
+    }
+}
+
+
+/*Responsive rules |||||||||||||||||||||||||||||||||||||||||||||||||||||||*/
+
+/*SECTIONS |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||*/
+
+/*FOOTER |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||*/
+
+.footer
+{
+    background-color: transparent;
+}
+
+footer
+{
+    display: relative;
+    font-size: 10px;
+    text-align: center;
+}
+
+/*Responsive rules ||||||||||||||||||||||||||||||||||||||||||||||||||||||||*/
+
+@media screen and (max-width: 1080px)
+{
+
+}
+
+/*Responsive rules |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||*/
+
+/*FOOTER |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||*/

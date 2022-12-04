@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Garage A. Vermeulen</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta id="viewport" name="viewport">
+
+    <script type="text/javascript">
+    //mobile viewport hack
+    (function(){
+    
+      function apply_viewport(){
+        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)   ) {
+    
+          var ww = window.screen.width;
+          var mw = 800; // min width of site
+          var ratio =  ww / mw; //calculate ratio
+          var viewport_meta_tag = document.getElementById('viewport');
+          if( ww < mw){ //smaller than minimum size
+            viewport_meta_tag.setAttribute('content', 'initial-scale=' + ratio + ', maximum-scale=' + ratio + ', minimum-scale=' + ratio + ', width=' + mw);
+          }
+          else { //regular size
+            viewport_meta_tag.setAttribute('content', 'initial-scale=1.0, maximum-scale=1, minimum-scale=1.0, width=' + ww);
+          }
+        }
+      }
+    
+      //ok, i need to update viewport scale if screen dimentions changed
+      window.addEventListener('resize', function(){
+        apply_viewport();
+      });
+    
+      apply_viewport();
+    
+    }());
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <input type="checkbox" class="toggler">
+            <div class="hamburger"><div></div></div>
+            <div class="menu">
+                <ul>
+                    <li class="logo"><a class="current-page"><img src="images/AV_Symb.jpg" alt="garage-Symbool"></a></li>
+                    <li class="nav-link"><a class="current-page">Home</a></li>
+                    <li class="nav-link"><a href="afspraak.html">Afspraak</a></li>
+                    <li class="nav-link"><a href="https://www.qauto.be/aanbod" target="_blank">Q-auto Occasies</a></li>
+                    <li class="nav-link"><a href="bedrijf.html">Bedrijf</a></li>
+                    <li class="nav-link"><a href="contact.html">Contact</a></li>
+                    <li class="title">
+                        <h1>Garage Alain Vermeulen</h1>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="main-section">
+    </section>
+
+    <section class="second-section">
+        <div class="welkom">
+            <h3>Welkom</h3>
+            <p>Welkom bij garage Alain Vermeulen. Uw specialist in BMW-wagens. Een te vertrouwen mechanieker met heel 
+                wat ervaring die de klus kan klaren. Zoekt u een nieuwe wagen dan kan je via Q-auto uw droomauto vinden. 
+                Q-auto is namelijk gepartnerd met onze garage en dus kunnen wij uw altijd weer op baan helpen. Wil je 
+                net dat tikkeltje meer power in je auto dan kunnen wij daar zeker ons werk van maken. We hebben 
+                verschillende van de nieuwste hoogtechnologische snufjes in huis om je auto te tunen naar jouw keuze.</p>
+        </div>
+        <div class="over">
+            <h3>al 25 jaar ervaring</h3>
+            <div class="slide-container">
+
+                <input type="radio" name="images" id="i0">
+                <input type="radio" name="images" id="i1" checked>
+                <input type="radio" name="images" id="i2">
+                <input type="radio" name="images" id="i3">
+                <input type="radio" name="images" id="i4">
+
+                <div id="Garage-Close-Up">
+                    <img src="images/AV_Carous_1.JPG">
+
+                    <label for="i1" class="nxt"></label>
+                </div>
+                <div id="Garage-Volledig">
+                    <img src="images/AV_Carous_2.JPG">
+
+                    <label for="i0" class="pre"></label>
+                    <label for="i2" class="nxt"></label>
+                </div>
+                <div id="Garage-Remtestbank">
+                    <img src="images/AV_Carous_3.JPG">
+
+                    <label for="i1" class="pre"></label>
+                    <label for="i3" class="nxt"></label>
+                </div>
+                <div id="Garage-Bruggen">
+                    <img src="images/AV_Carous_4.JPG">
+
+                    <label for="i2" class="pre"></label>
+                    <label for="i4" class="nxt"></label>
+                </div>
+                <div id="Garage-Banden-Kamer">
+                    <img src="images/AV_Carous_5.JPG">
+
+                    <label for="i3" class="pre"></label>
+                </div>
+
+
+                <div class="nav">
+                    <label class="dots" id="d0" for="i0" ></label>
+                    <label class="dots" id="d1" for="i1" ></label>
+                    <label class="dots" id="d2" for="i2" ></label>
+                    <label class="dots" id="d3" for="i3" ></label>
+                    <label class="dots" id="d4" for="i4" ></label>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="footer">
+        <footer>
+            <p><strong>Garage Alain Vermeulen</strong> - Switch-Road 120A - 8970 Poperinge (Belgie) - Tel.:+32(0)57/33.87.97 - E-mail: alain.vermeulen@pandora.be</p>
+        </footer>
+    </section>
+</body>
+</html>

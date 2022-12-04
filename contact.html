@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Garage A. Vermeulen</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta id="viewport" name="viewport">
+
+    <script type="text/javascript">
+    //mobile viewport hack
+    (function(){
+    
+      function apply_viewport(){
+        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)   ) {
+    
+          var ww = window.screen.width;
+          var mw = 800; // min width of site
+          var ratio =  ww / mw; //calculate ratio
+          var viewport_meta_tag = document.getElementById('viewport');
+          if( ww < mw){ //smaller than minimum size
+            viewport_meta_tag.setAttribute('content', 'initial-scale=' + ratio + ', maximum-scale=' + ratio + ', minimum-scale=' + ratio + ', width=' + mw);
+          }
+          else { //regular size
+            viewport_meta_tag.setAttribute('content', 'initial-scale=1.0, maximum-scale=1, minimum-scale=1.0, width=' + ww);
+          }
+        }
+      }
+    
+      //ok, i need to update viewport scale if screen dimentions changed
+      window.addEventListener('resize', function(){
+        apply_viewport();
+      });
+    
+      apply_viewport();
+    
+    }());
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <input type="checkbox" class="toggler">
+            <div class="hamburger"><div></div></div>
+            <div class="menu">
+                <ul>
+                    <li class="logo"><a href="index.html"><img src="images/AV_Symb.jpg" alt="garage-Symbool"></a></li>
+                    <li class="nav-link"><a href="index.html">Home</a></li>
+                    <li class="nav-link"><a href="afspraak.html">Afspraak</a></li>
+                    <li class="nav-link"><a href="https://www.qauto.be/aanbod" target="_blank">Q-auto Occasies</a></li>
+                    <li class="nav-link"><a href="bedrijf.html">Bedrijf</a></li>
+                    <li class="nav-link"><a class="current-page" href="">Contact</a></li>
+                    <li class="title">
+                        <h1>Garage Alain Vermeulen</h1>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="contact-section">
+        <div id="naam">
+            <h2>Alain Vermeulen</h2>
+            <p>Garage - Carroserie</p>
+            <p>Specialiteit BMW</p>
+        </div>
+        <div>
+            <div id="telefoon">
+                <h3>Telefoon</h3>
+                <ul>
+                    <li>057/33 87 97</li>
+                </ul>
+            </div>
+            <div>
+                <h3>GSM</h3>
+                <ul>
+                    <li>0475/67 31 05</li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <div>
+                <h3>E-mail</h3>
+                <ul>
+                    <li>alain.vermeulen@pandora.be</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="footer">
+        <footer>
+            <p><strong>Garage Alain Vermeulen</strong> - Switch-Road 120A - 8970 Poperinge (Belgie) - Tel.:+32(0)57/33.87.97 - E-mail: alain.vermeulen@pandora.be</p>
+        </footer>
+    </section>
+</body>
+</html>
